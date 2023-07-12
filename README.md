@@ -1,3 +1,16 @@
+### ZILOG
+
+#### Instalasi
+`cargo add --git https://github.com/zahrulsch/zilog.git`
+
+#### atau
+
+```toml
+[dependencies]
+zilog = { git = "https://github.com/zahrulsch/zilog.git" }
+```
+<hr/>
+
 #### Penggunaan
 
 ```rust
