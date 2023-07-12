@@ -1,5 +1,7 @@
 #![allow(dead_code)]
-use anyhow::Result;
+pub use anyhow;
+pub use log;
+
 use colored::Colorize;
 use log4rs::{
     append::{console::ConsoleAppender, file::FileAppender},
@@ -35,7 +37,7 @@ impl<'a> Zilog<'a> {
         }
     }
 
-    pub fn init(&self, max_level: log::LevelFilter) -> Result<()> {
+    pub fn init(&self, max_level: log::LevelFilter) -> anyhow::Result<()> {
         let app_name_console = self.app_name.magenta().bold();
         let stdout_appender = ConsoleAppender::builder()
             .encoder(Box::new(PatternEncoder::new(&format!(
